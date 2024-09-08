@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse</title>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: whitesmoke;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .universe{
+        width: 40vw;
+        aspect-ratio: 1;
+        background-color: #ffbb5c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* it means universe k andr jo bhi div h jse ki sun vo center m ajayega */
+        border-radius: 12px;
+        animation: skychange 10s ease-in infinite;
+    }
+
+    @keyframes skychange {
+        0%{
+            background-color: #ffbb5cb5;
+        }
+        25%{
+            background-color: #fcbf49;
+        }
+        50%{
+            background-color: #434242; /* when sun is in the middle*/
+        }
+        75%{
+            background-color: #fcbf49;
+        }
+        100%{
+            background-color: #ffbb5cb5;
+        }
+    }
+    
+    .sun{
+        width: 18vw;
+        aspect-ratio: 1;
+        background-color: #e25e3e;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+
+        &::before{
+            content:"";
+            position: absolute;
+            width: inherit;
+            /* here inherit means it will inherit width from sun */
+            aspect-ratio: 1;
+            border-radius: inherit;
+            background-color: #000;
+            animation: moonwalk 10s ease-in-out infinite;
+        }
+    }
+
+    @keyframes moonwalk {
+        0%{
+            translate: 100%;
+            scale: 1;
+        }
+        50%{
+            translate: 0%;
+            scale: 0.93;
+            /* box-shadow: wheat 0 48px 100px 0px; */
+        }
+        100% {
+            translate: -100%;
+            scale: 0.99;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="universe">
+        <div class="sun"></div>
+    </div>
+</body>
+</html>

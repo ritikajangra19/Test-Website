@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <title>Text Float</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #161626;
+        }
+
+        h1{
+            font-size: 7.5rem;
+            font-weight: bold;
+            text-shadow: -1px 2px 3px #38481c;
+            color: whitesmoke;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            /* animation: float 1.5s linear infinite alternate; */
+        }
+
+        h1::before{
+            content: 'SUBSCRIBE...';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #e0b525;
+            width: 10%;
+            border-right: 2px solid #e0b525;
+            overflow: hidden; /* only 10% width will be shown due to overflow other part of subscribe will be hidden*/
+            animation: float 1.7s linear infinite;
+        }
+
+        @keyframes float {
+            0%{
+                width: 0;
+            }
+            50%{
+                width: 100%;
+            }
+            100%{
+                width: 0%;
+            }
+        }
+        
+
+        /* @keyframes float {
+            0%{
+                rotate: 15deg;
+            }
+            
+            50%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate: -15deg;
+            }
+        } */
+
+    </style>
+</head>
+<body>
+    <h1>Subscribe...</h1>
+</body>
+</html>

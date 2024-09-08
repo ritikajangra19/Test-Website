@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            font-size: 62.5%;
+        }
+
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: black;
+        }
+
+        .cradle{
+            width: 50rem;
+            height: 50rem;
+            background-color: transparent;
+            border-top: 2rem solid palevioletred;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 6.4rem;
+        }
+
+        div{
+            width: .5rem;   /* 5px */
+            height: 30rem;  /* 200px */
+            background-color: palevioletred;
+            position: relative;
+        }
+
+        .cradle div::before{
+            content: "";
+            position: absolute;
+            background-color: palevioletred;
+            /* bottom: 0; */
+            left: -3.4rem;
+            top: 90%;
+            width: 7rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+
+        .cradle div:first-child{
+            animation: left-swing 2s linear infinite;
+            transform-origin: top left;
+        }
+
+        @keyframes left-swing{
+            0%{
+                rotate: 0deg;
+            }
+            25%{
+                rotate: 30deg;
+            }
+            50%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate: 0deg;
+            }
+        }
+
+        .cradle div:last-child{
+            animation: right-swing 2s linear 1s infinite;
+            transform-origin: top left;
+        }
+
+        @keyframes right-swing{
+            0%{
+                rotate: 0deg;
+            }
+            25%{
+                rotate: -30deg;
+            }
+            50%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate: 0deg;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cradle">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

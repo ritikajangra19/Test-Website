@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake Button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #161626;
+        }
+        button{
+            padding: 12px 36px;
+            font-size: 64px;
+            text-align: center;
+            border: 10px solid peachpuff;
+            background-color: transparent;
+            color: peachpuff;
+            font-weight: bold;
+
+            &:hover{
+                color:#dc4646;
+                border: 10px solid #dc4646;
+                animation: shaking 0.2s linear infinite;
+            }
+        }
+
+        @keyframes shaking {
+            0%{
+                /* transform: rotate(30deg); */
+                rotate: 20deg;
+            }
+            
+            50%{
+                /* transform: rotate(-30deg); */
+                rotate: -20deg;
+            }
+            100%{
+                /* transform: rotate(0deg); */
+                rotate: 0deg;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button type="button">Shake Me</button>
+</body>
+</html>
